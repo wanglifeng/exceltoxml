@@ -90,12 +90,15 @@ namespace ExportExcelToXML
                     foreach (KeyValuePair<int, string> pair in mapping)
                     {
                         writer.WriteStartElement(pair.Value);
-                        writer.WriteCData(sheet.Cells[rowIndex, pair.Key].Text);
+                        writer.WriteString(sheet.Cells[rowIndex, pair.Key].Text);
                         writer.WriteEndElement();
 
                         if (pair.Value == "FirstName")
                         {
-                            writer.WriteElementString("LastName", string.Empty);
+                            writer.WriteStartElement("LastName");
+                            writer.WriteString(" ");
+                            writer.WriteEndElement();
+                            //writer.WriteElementString("LastName", " ");
                         }
                     }
 

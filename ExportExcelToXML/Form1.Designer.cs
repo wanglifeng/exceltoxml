@@ -73,6 +73,7 @@
             // 
             // flwPanel
             // 
+            this.flwPanel.AutoScroll = true;
             this.flwPanel.Location = new System.Drawing.Point(7, 20);
             this.flwPanel.Name = "flwPanel";
             this.flwPanel.Size = new System.Drawing.Size(347, 143);
